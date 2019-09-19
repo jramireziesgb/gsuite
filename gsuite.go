@@ -100,7 +100,11 @@ func createUserName(firstName string, lastName string) string {
 		username = username + string(v[0])
 	}
 
-	return username + lasts[0]
+	for _, v := range lasts {
+		username = username + v
+	}
+
+	return username
 }
 
 func createPassword(passwd string) string {
