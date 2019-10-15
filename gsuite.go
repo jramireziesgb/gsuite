@@ -36,6 +36,7 @@ type User struct {
 	FloorSection               string
 	ChangePasswordatNextSignIn string
 	NewStatus                  string
+	Curso                      string
 }
 
 // Gesuser Registro para almacenar los alumnos obtenidos de Séneca
@@ -146,9 +147,10 @@ func (a *User) NewUser(usuario *GesUser, sufix string, dominio string, unidad st
 	a.FloorSection = ""
 	a.ChangePasswordatNextSignIn = "True"
 	a.NewStatus = "Active"
+	a.Curso = usuario.Unidad
 }
 
 func (a *User) String() string {
 
-	return fmt.Sprintf("%s, %s, %s, %s, %s", a.FirstName, a.LastName, a.EmailAddress, a.Password, a.OrgUnitPath)
+	return fmt.Sprintf("%s, %s, %s, %s, %s, %s", a.FirstName, a.LastName, a.EmailAddress, a.Password, a.OrgUnitPath, a.Curso)
 }
